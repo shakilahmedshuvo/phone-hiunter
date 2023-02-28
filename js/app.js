@@ -16,7 +16,7 @@ const displayPhones = phones => {
     phones.forEach(phone => {
         // create the element
         const phoneDiv = document.createElement('div');
-        // add the class list
+        // add the class list.
 
     })
 }
