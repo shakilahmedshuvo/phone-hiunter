@@ -9,8 +9,16 @@ const loadPhones = async (searchText) => {
 const displyPhones = phones => {
     const phonesContainer = document.getElementById('phones-container');
     phonesContainer.textContent = "";
-    // display 20 phones only
-    phones = phones.slice(0, 21);
+    // display 9 phones only
+    const showAll = document.getElementById('show-all');
+    if (phones.length > 9) {
+        phones = phones.slice(0, 9);
+        showAll.classList.remove('d-none');
+    }
+    else (
+        showAll.classList.add('d-none')
+    )
+
 
     // display no phones found  
     const noPhone = document.getElementById('no-phone-message');
@@ -42,11 +50,18 @@ const displyPhones = phones => {
     // stop spinner or loader
     toggleSpinner(false)
 }
+// 
+const processSearch = () => {
+    toggleSpinner(true)
+    const searchField = document.getElementById('search-field');
+    const searchText = searchField.value;
+    loadPhones(searchText);
+}
 
 // handle search btn click
 document.getElementById('btn-search').addEventListener('click', function () {
-    // start loader]
-    toggleSpinner(true);
+    // start loader
+    toggleSpinner(true)
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     loadPhones(searchText);
@@ -62,6 +77,15 @@ const toggleSpinner = isLoading => {
         loaderSection.classList.add('d-none')
     }
 }
+
+// not the best way to load show all
+document.getElementById('btn-show-all').addEventListener('click', function () {
+    toggleSpinner(true)
+    const searchField = document.getElementById('search-field');
+    const searchText = searchField.value;
+    loadPhones(searchText);
+})
+
 
 // call the function
 // loadPhones();
