@@ -14,7 +14,7 @@ const displyPhones = phones => {
         // add class list dynamically
         phoneDiv.classList.add('col');
         phoneDiv.innerHTML = `
-        <div class="card">
+        <div class="card p-4">
             <img src="${phone.image}" class="card-img-top" alt="">
             <div class="card-body">
                 <h5 class="card-title">${phone.phone_name}</h5>
@@ -26,6 +26,12 @@ const displyPhones = phones => {
         phonesContainer.appendChild(phoneDiv);
     })
 }
+
+// 
+document.getElementById('btn-search').addEventListener('click', function () {
+
+})
+
 
 // call the function
 loadPhones();
