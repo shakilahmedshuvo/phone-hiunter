@@ -7,7 +7,16 @@ const loadPhones = async () => {
 }
 
 const displyPhones = phones => {
-    console.log(phones);
+    const phonesContainer = document.getElementById('phone-container');
+    phones.forEach(phone => {
+        // create element 
+        const phoneDiv = document.createElement('div');
+        // add class list dynamically
+        phoneDiv.classList.add('col');
+        phoneDiv.innerHTML = `
+        
+        `;
+    })
 }
 
 // call the function
