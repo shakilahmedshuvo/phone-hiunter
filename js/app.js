@@ -37,10 +37,10 @@ const displyPhones = phones => {
         </div>
         `;
         phonesContainer.appendChild(phoneDiv)
-        // stop spinner or loader
-        toggleSpinner(false)
 
     })
+    // stop spinner or loader
+    toggleSpinner(false)
 }
 
 // handle search btn click
