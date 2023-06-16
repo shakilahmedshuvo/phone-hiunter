@@ -3,10 +3,10 @@ const loadPhones = async (searchText) => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     const res = await fetch(url);
     const data = await res.json();
-    displyPhones(data.data);
+    displayPhones(data.data);
 }
 
-const displyPhones = phones => {
+const displayPhones = phones => {
     const phonesContainer = document.getElementById('phones-container');
     phonesContainer.textContent = "";
     // display 9 phones only
